@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Represent</string>
+    <string name="title_activity_representative_basics">RepresentativeBasics</string>
+    <string name="photo_of_represenatative">Photo of Represenatative</string>
+    <string name="zip_code">ZIP CODE</string>
+    <string name="representative_name">Representative Name</string>
+    <string name="w">W</string>
+    <string name="term_ends">Term Ends:</string>
+    <string name="position">Position</string>
+    <string name="committees">Committees</string>
+    <string name="recent_bill">Recent Bill</string>
+    <string name="list_of_committees">List of Committees</string>
+    <string name="bill_description">Bill Description</string>
+    <string name="glad_to_see_the_wind_ptc_is_supporting_jobs_and">Glad to see the wind PTC is supporting jobs and...</string>
+    <string name="more">More...</string>
+    <string name="name">Name</string>
+    <string name="google_app_id">23456</string>
+</resources>

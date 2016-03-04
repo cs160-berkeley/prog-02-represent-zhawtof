@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:padding="5dp"
+        android:layout_centerVertical="true"
+        android:id="@+id/repPicture"
+        android:src="@drawable/placeholder"
+        android:layout_weight="0.31"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/name"
+        android:id="@+id/repName"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/repPicture"
+        android:padding="5dp"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/emailIcon"
+        android:src="@drawable/email_icon"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/repPicture"
+        android:padding="10dp"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/websiteIcon"
+        android:src="@drawable/website_icon"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/emailIcon"
+        android:padding="10dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/more"
+        android:id="@+id/moreInfoButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:padding="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/glad_to_see_the_wind_ptc_is_supporting_jobs_and"
+        android:id="@+id/twitterFeed"
+        android:padding="3dp"
+        android:layout_below="@+id/repName"
+        android:layout_toEndOf="@+id/twitterIcon" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/twitterIcon"
+        android:src="@drawable/twitter_logo"
+        android:padding="10dp"
+        android:layout_below="@+id/repName"
+        android:layout_toEndOf="@+id/repPicture" />
+
+    <TextView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/w"
+        android:id="@+id/partyAffiliation"
+        android:background="#FFaFFF"
+        android:layout_alignBottom="@+id/repPicture"
+        android:layout_alignRight="@+id/repPicture"
+        android:textSize="35sp"
+        android:layout_gravity="top|center_vertical"/>
+
+
+</RelativeLayout>
