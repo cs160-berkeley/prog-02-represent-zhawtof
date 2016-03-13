@@ -20,6 +20,9 @@ public class Representative implements Serializable {
     public String pictureName;
     public String partyAffiliation;
     public String endOfTerm;
+    public String website;
+    public String email;
+    public String bioId;
 
     Representative(String n, List<String> c,
                    String r, String p,
@@ -31,6 +34,27 @@ public class Representative implements Serializable {
         pictureName = pname;
         partyAffiliation = a;
         endOfTerm = d;
+    }
+
+    Representative(String id,
+                   String n,
+                   String p,
+                   String a,
+                   String d,
+                   String w,
+                   String e) {
+        bioId = id;
+        name = n;
+        position = p;
+        partyAffiliation = a;
+        endOfTerm = d;
+        website = w;
+        email = e;
+
+        committees = null;
+        recentBill = null;
+        pictureName = null;
+
     }
 
     public static ArrayList<Representative> getDefaults(){

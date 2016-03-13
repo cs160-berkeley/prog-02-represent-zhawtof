@@ -2,6 +2,8 @@ package com.zhawtof.represent;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,15 +50,37 @@ public class RepAdapter extends BaseAdapter{
         final Representative rep = repList.get(position);
 
         TextView repName = (TextView) repRow.findViewById(R.id.repName);
+        ImageView repPic = (ImageView) repRow.findViewById(R.id.repPicture);
+        TextView partyAffiliation = (TextView) repRow.findViewById(R.id.partyAffiliation);
+        ImageView email = (ImageView) repRow.findViewById(R.id.emailIcon);
+        ImageView website = (ImageView) repRow.findViewById(R.id.websiteIcon);
+
         repName.setText(rep.name);
+        email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(i.EXTRA_EMAIL, new String[]{rep.email});
+                context.startActivity(Intent.createChooser(i, "Send mail..."));
+            }
+        });
+        website.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.addCategory(Intent.CATEGORY_BROWSABLE);
+                i.setData(Uri.parse(rep.website));
+                context.startActivity(i);
+            }
+        });
+
 
         final String locationOfImages = "drawable/";
 
-        ImageView repPic = (ImageView) repRow.findViewById(R.id.repPicture);
 //        repPic.setImageResource(context.getResources().getIdentifier(
 //                locationOfImages.concat(rep.pictureName), null, context.getPackageName()));
 
-        TextView partyAffiliation = (TextView) repRow.findViewById(R.id.partyAffiliation);
         partyAffiliation.setText(rep.partyAffiliation);
         if (rep.partyAffiliation.equals("D")) {
             partyAffiliation.setBackgroundColor(context.getResources().getColor(R.color.democrat));
@@ -69,8 +93,11 @@ public class RepAdapter extends BaseAdapter{
         moreInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent next = new Intent(context.getApplicationContext(), RepDetails.class);
+
+
+                Intent next = new Intent(context, RepDetails.class);
                 next.putExtra("rep", rep);
+                next.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(next);
             }
         });

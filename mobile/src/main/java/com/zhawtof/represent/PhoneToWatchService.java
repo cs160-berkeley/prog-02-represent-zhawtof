@@ -51,7 +51,9 @@ public class PhoneToWatchService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d("PHONE", "onStartCommand" + intent.toString());
-        ArrayList<Representative> repList = (ArrayList) intent.getSerializableExtra("repList");
+        final ArrayList<Representative> repList = (ArrayList) intent.getSerializableExtra("repList");
+//        final String county = intent.getStringExtra("county");
+
 
         Log.d("T", String.valueOf(repList.size()));
 
@@ -66,15 +68,16 @@ public class PhoneToWatchService extends Service {
         Log.d("T", String.valueOf(reps.length()));
         Log.d("T", "onStartCommand" + reps);
 
-        final String repListWord = "repList";
-
         new Thread(new Runnable() {
             @Override
             public void run() {
                 //first, connect to the apiclient
                 mApiClient.connect();
                 //now that you're connected, send a massage with the cat name
-                sendMessage("/" + repListWord , reps);
+                Log.d("SEND", "repList");
+                sendMessage("/repList", reps);
+//                Log.d("SEND", "county");
+//                sendMessage("/county", county);
             }
         }).start();
 
@@ -87,7 +90,7 @@ public class PhoneToWatchService extends Service {
         return null;
     }
 
-    private void sendMessage( final String path, final String reps ) {
+    private void sendMessage( final String path, final String message ) {
         //one way to send message: start a new thread and call .await()
         //see watchtophoneservice for another way to send a message
         new Thread( new Runnable() {
@@ -97,7 +100,7 @@ public class PhoneToWatchService extends Service {
                 for(Node node : nodes.getNodes()) {
                     Log.d("T", "send message");
                     MessageApi.SendMessageResult result = Wearable.MessageApi.sendMessage(
-                            mApiClient, node.getId(), path, reps.getBytes() ).await();
+                            mApiClient, node.getId(), path, message.getBytes() ).await();
                 }
             }
         }).start();

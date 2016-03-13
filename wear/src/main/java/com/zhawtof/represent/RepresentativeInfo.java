@@ -3,13 +3,12 @@ package com.zhawtof.represent;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.wearable.view.WatchViewStub;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class RepresentativeInfo extends Activity {
+
 
     TextView repName;
     TextView partyAffiliation;
@@ -17,6 +16,7 @@ public class RepresentativeInfo extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.round_activity_representative_info);
 
         Button electionButton = (Button) findViewById(R.id.twelveElectionButton);

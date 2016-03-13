@@ -21,13 +21,13 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/w"
+        android:text="R"
         android:id="@+id/partyAffiliation"
         android:background="#FFaFFF"
         android:layout_alignBottom="@+id/repPicture"
         android:layout_alignRight="@+id/repPicture"
-        android:textSize="35sp"
-        android:layout_gravity="top|center_vertical"/>
+        android:textSize="25sp"
+        android:gravity="center|top" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -78,7 +78,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/bill_description"
         android:id="@+id/billDescription"
         android:layout_below="@+id/recentBillWord"
@@ -87,7 +87,7 @@
 
     <ListView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="175dp"
         android:id="@+id/committeesList"
         android:layout_below="@+id/CommitteesWord"
         android:layout_alignParentStart="true" />

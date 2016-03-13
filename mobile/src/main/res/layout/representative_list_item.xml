@@ -31,7 +31,8 @@
         android:src="@drawable/email_icon"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/repPicture"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:clickable="true"/>
 
     <ImageView
         android:layout_width="50dp"
@@ -40,7 +41,8 @@
         android:src="@drawable/website_icon"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/emailIcon"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:clickable="true"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -74,13 +76,13 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/w"
+        android:text="R"
         android:id="@+id/partyAffiliation"
         android:background="#FFaFFF"
         android:layout_alignBottom="@+id/repPicture"
         android:layout_alignRight="@+id/repPicture"
-        android:textSize="35sp"
-        android:layout_gravity="top|center_vertical"/>
+        android:textSize="25sp"
+        android:gravity="center|top" />
 
 
 </RelativeLayout>
